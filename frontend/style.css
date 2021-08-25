@@ -1,0 +1,9 @@
+.choice {
+    font-family: 'sans-serif';
+    font-size: 22px;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 40%;
+}
