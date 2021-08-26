@@ -34,24 +34,26 @@ class Question {
 quizSlides() {
 
     let questionCounter = 0;
-    // if ${this.questionIndex} === 0 {
-//   Question.quizQuestions.forEach(quiz) 
-    //   function quiz(questionCounter) {
-         
-        // for (let index = 0; index<Question.quizQuestions.length; index++) {
-        // index = 0;
-        // while (questionCounter < Question.quizQuestions.length) {
+
         question.innerHTML = Question.quizQuestions[questionCounter].content
-        answerOne.innerHTML = Question.quizQuestions[questionCounter].answers[0].content
-        answerTwo.innerHTML = Question.quizQuestions[questionCounter].answers[1].content
-        answerThree.innerHTML = Question.quizQuestions[questionCounter].answers[2].content
-        answerFour.innerHTML = Question.quizQuestions[questionCounter].answers[3].content
-        next.addEventListener("click", (nextQuestion)) 
-        submit.style.display = 'none'
+        answerOne.innerHTML = Answer.answers[0].content
+        answerTwo.innerHTML = Answer.answers[1].content
+        answerThree.innerHTML = Answer.answers[2].content
+        answerFour.innerHTML = Answer.answers[3].content
+
         
-    // }
+        Answer.checkAnswer();    
+        
+        next.addEventListener("click", (nextQuestion)); 
+
+        submit.style.display = 'none'
 
     function nextQuestion() {
+        answerOne.style.color = '';
+        answerTwo.style.color = '';
+        answerThree.style.color = '';
+        answerFour.style.color = '';
+
         if (questionCounter < 4) {
         questionCounter++;
         question.innerHTML = Question.quizQuestions[questionCounter].content
@@ -59,6 +61,43 @@ quizSlides() {
         answerTwo.innerHTML = Question.quizQuestions[questionCounter].answers[1].content
         answerThree.innerHTML = Question.quizQuestions[questionCounter].answers[2].content
         answerFour.innerHTML = Question.quizQuestions[questionCounter].answers[3].content
+
+        answerOne.onclick = function() {
+            if (Question.quizQuestions[questionCounter].answers[0].correct_answer == true) {
+                answerOne.style.color = 'green'
+            } else {
+                answerOne.style.color = 'red'
+            }
+            console.log('clicked')
+        }
+
+        answerTwo.onclick = function() {
+            if (Question.quizQuestions[questionCounter].answers[1].correct_answer == true) {
+                answerTwo.style.color = 'green'
+            } else {
+                answerTwo.style.color = 'red'
+            }
+            console.log('clicked')
+        }
+
+        answerThree.onclick = function() {
+            if (Question.quizQuestions[questionCounter].answers[2].correct_answer == true) {
+                answerThree.style.color = 'green'
+            } else {
+                answerThree.style.color = 'red'
+            }
+            console.log('clicked')
+        }
+
+        answerFour.onclick = function() {
+            if (Question.quizQuestions[questionCounter].answers[3].correct_answer == true) {
+                answerFour.style.color = 'green'
+            } else {
+                answerFour.style.color = 'red'
+            }
+            console.log('clicked')
+        }
+
         } 
         
         if (questionCounter >= 4) {
@@ -67,58 +106,8 @@ quizSlides() {
         }
         
 
-           
-        
-    // }
 }
 
-        
-  //     } else {
-    //         // 
-    //         // } 
-    //     }
-
     
-    
-//         ++
-    // })
-    // event listener to go to next question
-
-    // const question = document.getElementById('question')
-    // const i=0;
-    // const next = document.getElementById('next')
-    // next.addEventListener("click", () => {
-    //         question.innerHTML = question[i];
-    //         i++
-        // }
-    // )
-
 }
 }
-// function fetchQuestions() {
-
-
-
-
-    //         let quiz = questions.data.map(question => {
-    //             const quizQuestion = {
-    //                 content: question.question
-    //             };
-    //         const choices = [ ...question.attributes.answers];
-    //             choices.forEach((answer, index) => {
-    //                 quizQuestion["answer" + (index+1)] = answer;
-    //             });
-                
-    //         });
-    
-    // //         for (let question of questions.data) {
-    // //             let quizQuestion = new Question(question)
-    // // //             question.attributes.answers.forEach(answer => {
-    // // //                 let quizAnswers = new Answer(answer)
-    // // //                 quizQuestion.answers.push(quizAnswers)
-    // // //             })
-    // //         }
-    //         return quiz;
-    // });
-    // startQuiz();
-// }

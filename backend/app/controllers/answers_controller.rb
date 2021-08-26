@@ -1,13 +1,14 @@
 class AnswersController < ApplicationController
     def index
-        answers = Answer.all
-        render json: AnswerSerializer.new(answers)
+        @answers = Answer.all
+        # render json: AnswerSerializer.new(answers)
+        render json: @answers
     end
 
     def create
-        answer = Answer.create(answer_params)
+        answer = Answer.new(answer_params)
         if answer.save
-            render json: answer
+            render json: AnswerSerializer.new(answer)
         end
     end
 
