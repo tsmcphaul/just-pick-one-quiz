@@ -29,46 +29,63 @@ class Answer {
 
   static checkAnswer() {
     //   let answerIndex = 2
-    const allAns = Answer.answers
+    
     let ansIndex = 0
 
     answerOne.onclick = function() {
         if (allAns[0].correct_answer == true) {
             answerOne.style.color = 'green'
+            score +=1
+            disable()
         } else {
             answerOne.style.color = 'red'
+            disable()
         }
         console.log('clicked')
+        // answerOne.disabled = true;
+        
     }
 
     answerTwo.onclick = function() {
         if (allAns[1].correct_answer == true) {
             answerTwo.style.color = 'green'
+            score +=1
+            disable()
         } else {
             answerTwo.style.color = 'red'
+            disable()
         }
         console.log('clicked')
+        // answerTwo.disabled = true;
     }
 
     answerThree.onclick = function() {
         if (allAns[2].correct_answer == true) {
             answerThree.style.color = 'green'
+            score +=1
+            disable()
         } else {
             answerThree.style.color = 'red'
+            disable()
         }
         console.log('clicked')
+        // answerThree.disabled = true;
     }
 
     answerFour.onclick = function() {
         if (allAns[3].correct_answer == true) {
             answerFour.style.color = 'green'
+            score +=1
+            disable()
         } else {
             answerFour.style.color = 'red'
+            disable()
         }
         console.log('clicked')
+        // answerFour.disabled = true;
     }
 
-
+  }
     //   if (allAns[ansIndex].correct_answer === false) {
     //       console.log('hello');
     //     //   if(Answer.answers[0].correct_answer === false) {
@@ -121,7 +138,7 @@ class Answer {
         //   answerFour.style.color = 'green';
         // }
     //   }
-  }  
+    
 
 
 //  function showAnswer() {

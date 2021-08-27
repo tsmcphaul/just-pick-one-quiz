@@ -3,14 +3,25 @@ class Grade {
         this.score = score;
     }
 
-score = 0;
 
 
 
-showScores() {
-    submit.addEventListener("click", (showScores))
-    console.log('submit')
+
+static showScores() {
+    // submit.addEventListener("click", (showScores))
+    submit.onclick = function() {
+        console.log(score);
+        submit.style.display = 'none'
+        // endPage = document.getElementById('quiz');
+        quizGrid.innerHTML = "Your score is" + " " + score + "!"
+        restart.style.display = 'block'
+        restart.onclick = function() {
+            welcome();
+        }
+    }
+    
 }
+
     
 }
 

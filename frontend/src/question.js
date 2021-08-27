@@ -7,7 +7,7 @@ class Question {
         this.id = question.attributes.id
         this.answers = question.attributes.answers
         this.questionIndex = (question.attributes.id) -1
-        Question.quizQuestions.push(this)
+        questions.push(this)
     }
 
     static getQuestions() {
@@ -18,7 +18,7 @@ class Question {
                         let newQuestion = new Question(question)
                     }
                     this.renderQuestions()
-                    console.log(Question.quizQuestions)
+                    console.log(questions)
                 })
     }
 
@@ -35,11 +35,11 @@ quizSlides() {
 
     let questionCounter = 0;
 
-        question.innerHTML = Question.quizQuestions[questionCounter].content
-        answerOne.innerHTML = Answer.answers[0].content
-        answerTwo.innerHTML = Answer.answers[1].content
-        answerThree.innerHTML = Answer.answers[2].content
-        answerFour.innerHTML = Answer.answers[3].content
+        question.innerHTML = questions[questionCounter].content
+        answerOne.innerHTML = allAns[0].content
+        answerTwo.innerHTML = allAns[1].content
+        answerThree.innerHTML = allAns[2].content
+        answerFour.innerHTML = allAns[3].content
 
         
         Answer.checkAnswer();    
@@ -53,47 +53,61 @@ quizSlides() {
         answerTwo.style.color = '';
         answerThree.style.color = '';
         answerFour.style.color = '';
+        enable();
 
         if (questionCounter < 4) {
         questionCounter++;
-        question.innerHTML = Question.quizQuestions[questionCounter].content
-        answerOne.innerHTML = Question.quizQuestions[questionCounter].answers[0].content
-        answerTwo.innerHTML = Question.quizQuestions[questionCounter].answers[1].content
-        answerThree.innerHTML = Question.quizQuestions[questionCounter].answers[2].content
-        answerFour.innerHTML = Question.quizQuestions[questionCounter].answers[3].content
+        question.innerHTML = questions[questionCounter].content
+        answerOne.innerHTML = questions[questionCounter].answers[0].content
+        answerTwo.innerHTML = questions[questionCounter].answers[1].content
+        answerThree.innerHTML = questions[questionCounter].answers[2].content
+        answerFour.innerHTML = questions[questionCounter].answers[3].content
 
         answerOne.onclick = function() {
-            if (Question.quizQuestions[questionCounter].answers[0].correct_answer == true) {
+            if (questions[questionCounter].answers[0].correct_answer == true) {
                 answerOne.style.color = 'green'
+                score +=1
+                disable()
             } else {
                 answerOne.style.color = 'red'
+                disable()
             }
+
             console.log('clicked')
         }
 
         answerTwo.onclick = function() {
-            if (Question.quizQuestions[questionCounter].answers[1].correct_answer == true) {
+            if (questions[questionCounter].answers[1].correct_answer == true) {
                 answerTwo.style.color = 'green'
+                score +=1
+                disable()
             } else {
                 answerTwo.style.color = 'red'
+                disable()
             }
             console.log('clicked')
         }
 
         answerThree.onclick = function() {
-            if (Question.quizQuestions[questionCounter].answers[2].correct_answer == true) {
+            if (questions[questionCounter].answers[2].correct_answer == true) {
                 answerThree.style.color = 'green'
+                score +=1
+                disable()
             } else {
                 answerThree.style.color = 'red'
+                disable()
             }
             console.log('clicked')
         }
 
         answerFour.onclick = function() {
-            if (Question.quizQuestions[questionCounter].answers[3].correct_answer == true) {
+            if (questions[questionCounter].answers[3].correct_answer == true) {
                 answerFour.style.color = 'green'
+                score +=1
+                disable()
             } else {
                 answerFour.style.color = 'red'
+                disable()
             }
             console.log('clicked')
         }
