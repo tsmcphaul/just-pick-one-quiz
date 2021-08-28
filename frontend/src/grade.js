@@ -15,10 +15,9 @@ static showScores() {
         // endPage = document.getElementById('quiz');
         quizGrid.innerHTML = "Your score is" + " " + score + "!"
         restart.style.display = 'block'
-        restart.onclick = function() {
-            welcome();
-        }
     }
+
+
     
 }
 

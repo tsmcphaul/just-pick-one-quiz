@@ -45,7 +45,8 @@ quizSlides() {
         Answer.checkAnswer();    
         
         next.addEventListener("click", (nextQuestion)); 
-
+        ansButtons.style.display = 'inline';
+        next.style.display = 'inline'
         submit.style.display = 'none'
 
     function nextQuestion() {

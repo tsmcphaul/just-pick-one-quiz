@@ -14,6 +14,7 @@ const next = document.getElementById('next')
 const restart = document.getElementById('restart');
 const submit = document.getElementById('submit');
 let startButton = document.createElement("BUTTON");
+let ansButtons = document.getElementById('buttons');
 let questionCounter = 0;
 let answerChoices = [];
 let ansIndex = 0
@@ -41,6 +42,10 @@ welcome = () => {
     
     startButton.innerHTML = "Start";
     document.body.appendChild(startButton);
+    submit.style.display = 'none'
+    restart.style.display = 'none'
+    next.style.display = 'none'
+    ansButtons.style.display = 'none';
     startButton.addEventListener("click", (startQuiz))
     // startQuiz();
 }
