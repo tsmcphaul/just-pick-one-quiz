@@ -28,9 +28,6 @@ class Answer {
 
 
   static checkAnswer() {
-    //   let answerIndex = 2
-    
-    let ansIndex = 0
 
     answerOne.onclick = function() {
         if (allAns[0].correct_answer == true) {
@@ -140,21 +137,6 @@ class Answer {
     //   }
     
 
-
-//  function showAnswer() {
-//     answerOne.onclick = function() {
-//         console.log('hello')
-//     }
-// };
-    // answerOne.addEventListener("click", checkAnswer);
-    // answerTwo.addEventListener("click", checkAnswer);
-    // answerThree.addEventListener("click", checkAnswer);
-    // answerFour.addEventListener("click", checkAnswer);
-    // answerOne.style.color = 'red';
-    // checkAnswer() {
-         
-    //   console.log('hello'); 
-    // }
 
 
 };

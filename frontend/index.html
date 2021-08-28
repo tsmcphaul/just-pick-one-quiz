@@ -6,24 +6,30 @@
         Just Pick One!
     </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    <h1>Just Pick One!</h1>
-    <h2>A Lebron James Quiz</h2>
+    <div class="container"></div>
+    <h1 class="center-align">Just Pick One!</h1>
+    <h2 class="center-align">A Lebron James Quiz</h2>
+    
     <div class="quiz-grid">
         <div id="quiz">
             <p id="question" name="question"> </p>
         <div id="buttons">    
-            <button class="choice" id="answer-1"></button>
-            <button class="choice" id="answer-2"></button>
-            <button class="choice" id="answer-3"></button>
-            <button class="choice" id="answer-4"></button>
+            <button class="card-panel hoverable" class="choice" id="answer-1"></button>
+            <button class="card-panel hoverable" class="choice" id="answer-2"></button>
+            <button class="card-panel hoverable" class="choice" id="answer-3"></button>
+            <button class="card-panel hoverable" class="choice" id="answer-4"></button>
         </div>
         </div>
+        <br>
+        <br>
         <div id="navigation">
-            <button class="btn" id="next">Next</button>
-            <button class="btn" id="submit">Submit</button>
-            <a class="btn" id="restart" href="/Users/shaemcphaul/Development/code/phase4/just-pick-one-quiz/frontend/index.html">Start Over!</a>
+            <button class="start" id="start">START</button>
+            <button class="btn" id="next">NEXT</button>
+            <button class="btn" id="submit">SUBMIT</button>
+            <a class="btn" id="restart" href="/Users/shaemcphaul/Development/code/phase4/just-pick-one-quiz/frontend/index.html">Try Again!</a>
         </div>
         
         <div id="grade"></div>
@@ -32,5 +38,6 @@
     <script src="src/grade.js"></script>
     <script src="src/question.js"></script>
     <script src="index.js"></script>
+</div>
 </body>
 </html>

@@ -13,7 +13,7 @@ const quizGrid = document.getElementById('quiz');
 const next = document.getElementById('next')
 const restart = document.getElementById('restart');
 const submit = document.getElementById('submit');
-let startButton = document.createElement("BUTTON");
+let startButton = document.getElementById("start");
 let ansButtons = document.getElementById('buttons');
 let questionCounter = 0;
 let answerChoices = [];
@@ -40,7 +40,7 @@ function enable() {
 welcome = () => {
 
     
-    startButton.innerHTML = "Start";
+    startButton.innerHTML = "START";
     document.body.appendChild(startButton);
     submit.style.display = 'none'
     restart.style.display = 'none'

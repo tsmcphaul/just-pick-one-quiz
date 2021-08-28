@@ -1,3 +1,99 @@
+body{
+    /* background-color: goldenrod; */
+    background-image: url("https://media.giphy.com/media/lJ88OkVp8NdOP74ucu/giphy.gif");
+}
+
+.quiz-grid{
+    width: 100%;
+    /* padding: 12px; */
+    padding: 10px 50px 50px 50px;
+   
+
+}
+
+h1 {
+    background-color: purple;
+    font-size: 25px;
+
+}
+
+h2 {
+    background-color: purple;
+    font-size: 25px;
+}
+
+p {
+    font-size: 30px;
+}
+
+#quiz {
+    background-color: purple;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+#question {
+    width: 100%;
+
+}
+
+#buttons {
+    font-size: 25px;
+}
+
+#restart {
+
+    background-color: purple;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+
+}
+
+.btn {
+    text-transform: uppercase;
+}
+
+#next {
+    background-color: purple;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+
+#submit {
+    background-color: purple;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+
+.start {
+    background-color: purple;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+}
+
 .choice {
     font-family: 'sans-serif';
     font-size: 22px;
