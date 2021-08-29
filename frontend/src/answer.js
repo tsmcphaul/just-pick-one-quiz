@@ -38,8 +38,6 @@ class Answer {
             answerOne.style.color = 'red'
             disable()
         }
-        console.log('clicked')
-        // answerOne.disabled = true;
         
     }
 
