@@ -1,5 +1,3 @@
-
-
 const questionsURL = "http://localhost:3000/questions"
 const answersURL = "http://localhost:3000/answers"
 const answerOne = document.getElementById('answer-1');
@@ -16,7 +14,6 @@ const submit = document.getElementById('submit');
 let startButton = document.getElementById("start");
 let ansButtons = document.getElementById('buttons');
 let questionCounter = 0;
-let answerChoices = [];
 let ansIndex = 0
 const questions = Question.quizQuestions;
 const allAns = Answer.answers 
@@ -38,8 +35,6 @@ function enable() {
 
 
 welcome = () => {
-
-    
     startButton.innerHTML = "START";
     document.body.appendChild(startButton);
     submit.style.display = 'none'
@@ -47,25 +42,13 @@ welcome = () => {
     next.style.display = 'none'
     ansButtons.style.display = 'none';
     startButton.addEventListener("click", (startQuiz))
-    // startQuiz();
 }
 
-
  startQuiz = () => {
-     
-    // startPage.style.display = 'none'
     startButton.style.display = 'none'
-    // startButton.classList.remove("BUTTON");
     Question.getQuestions();
     Answer.getAnswers();
     Grade.showScores();
-    
-    
-//     score
-//     //render start button
-//     //render answers
-//     //show grade
-//     //submit and next question
-//     //show final grade
 }
+
 welcome();
