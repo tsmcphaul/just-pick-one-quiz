@@ -18,14 +18,12 @@ class Question {
                         let newQuestion = new Question(question)
                     }
                     this.renderQuestions()
-                    console.log(questions)
                 })
     }
 
     static renderQuestions() {
         for (let question of this.quizQuestions) {
             question.quizSlides()
-            // console.log(question)
         }
     }
 
@@ -73,8 +71,6 @@ quizSlides() {
                 answerOne.style.color = 'red'
                 disable()
             }
-
-            console.log('clicked')
         }
 
         answerTwo.onclick = function() {
@@ -86,7 +82,6 @@ quizSlides() {
                 answerTwo.style.color = 'red'
                 disable()
             }
-            console.log('clicked')
         }
 
         answerThree.onclick = function() {
@@ -98,7 +93,6 @@ quizSlides() {
                 answerThree.style.color = 'red'
                 disable()
             }
-            console.log('clicked')
         }
 
         answerFour.onclick = function() {
@@ -110,9 +104,7 @@ quizSlides() {
                 answerFour.style.color = 'red'
                 disable()
             }
-            console.log('clicked')
         }
-
         } 
         
         if (questionCounter >= 4) {
