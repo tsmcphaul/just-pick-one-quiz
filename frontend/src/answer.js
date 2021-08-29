@@ -18,14 +18,8 @@ class Answer {
                     for (let answer of answers) {
                         let newAnswer = new Answer(answer)
                     }
-                    // this.renderQuestions()
-                    console.log(Answer.answers)
                 })
     }
-
- 
-
-
 
   static checkAnswer() {
 
@@ -50,8 +44,6 @@ class Answer {
             answerTwo.style.color = 'red'
             disable()
         }
-        console.log('clicked')
-        // answerTwo.disabled = true;
     }
 
     answerThree.onclick = function() {
@@ -63,8 +55,6 @@ class Answer {
             answerThree.style.color = 'red'
             disable()
         }
-        console.log('clicked')
-        // answerThree.disabled = true;
     }
 
     answerFour.onclick = function() {
@@ -76,11 +66,10 @@ class Answer {
             answerFour.style.color = 'red'
             disable()
         }
-        console.log('clicked')
-        // answerFour.disabled = true;
     }
 
   }
+}
     //   if (allAns[ansIndex].correct_answer === false) {
     //       console.log('hello');
     //     //   if(Answer.answers[0].correct_answer === false) {
@@ -134,7 +123,3 @@ class Answer {
         // }
     //   }
     
-
-
-
-};
