@@ -1,8 +1,8 @@
 class AnswersController < ApplicationController
     def index
-        @answers = Answer.all
+        answers = Answer.all
         # render json: AnswerSerializer.new(answers)
-        render json: @answers
+        render json: answers
     end
 
     def create
