@@ -16,6 +16,7 @@ class Answer {
                     for (let answer of answers) {
                         let newAnswer = new Answer(answer)
                     }
+                    console.log(answers)
                 })
                 // .catch((err) => {
                 //     console.log('There is an error present.');

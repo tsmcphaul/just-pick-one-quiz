@@ -48,6 +48,7 @@ welcome = () => {
     startButton.style.display = 'none'
     Question.getQuestions();
     Answer.getAnswers();
+    Grade.getGrade();
     Grade.showScores();
 }
 

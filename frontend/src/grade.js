@@ -11,6 +11,7 @@ static getGrade() {
                 for (let grade of grades.data) {
                     let newGrade = new Grade(grade)
                 }
+                console.log(grades)
             })
 }    
 

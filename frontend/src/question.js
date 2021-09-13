@@ -16,6 +16,7 @@ class Question {
                     for (let question of questions.data) {
                         let newQuestion = new Question(question)
                     }
+                    console.log(questions)
                     this.renderQuestions()
                 })
     }
