@@ -1,6 +1,4 @@
 class Question {
-    static quizQuestions = []
-    
 
     constructor(question) {
         this.content = question.attributes.content
@@ -9,6 +7,7 @@ class Question {
         this.questionIndex = (question.attributes.id) -1
         questions.push(this)
     }
+    static quizQuestions = []
 
     static getQuestions() {
         fetch("http://localhost:3000/questions")
@@ -22,30 +21,29 @@ class Question {
     }
 
     static renderQuestions() {
-        for (let question of this.quizQuestions) {
+        for (let question of questions) {
             question.quizSlides()
         }
     }
-
 
 
 quizSlides() {
 
     let questionCounter = 0;
 
-        question.innerHTML = questions[questionCounter].content
-        answerOne.innerHTML = allAns[0].content
-        answerTwo.innerHTML = allAns[1].content
-        answerThree.innerHTML = allAns[2].content
-        answerFour.innerHTML = allAns[3].content
+    question.innerHTML = questions[questionCounter].content
+    answerOne.innerHTML = allAns[0].content
+    answerTwo.innerHTML = allAns[1].content
+    answerThree.innerHTML = allAns[2].content
+    answerFour.innerHTML = allAns[3].content
 
-        
-        Answer.checkAnswer();    
-        
-        next.addEventListener("click", (nextQuestion)); 
-        ansButtons.style.display = 'inline';
-        next.style.display = 'inline'
-        submit.style.display = 'none'
+
+    Answer.checkAnswer();    
+    
+    next.addEventListener("click", (nextQuestion)); 
+    ansButtons.style.display = 'inline';
+    next.style.display = 'inline'
+    submit.style.display = 'none'
 
     function nextQuestion() {
         answerOne.style.color = '';
@@ -65,7 +63,8 @@ quizSlides() {
         answerOne.onclick = function() {
             if (questions[questionCounter].answers[0].correct_answer == true) {
                 answerOne.style.color = 'green'
-                score +=1
+                score+=1
+                Grade.grades.push(score)
                 disable()
             } else {
                 answerOne.style.color = 'red'
@@ -76,7 +75,8 @@ quizSlides() {
         answerTwo.onclick = function() {
             if (questions[questionCounter].answers[1].correct_answer == true) {
                 answerTwo.style.color = 'green'
-                score +=1
+                score+=1
+                Grade.grades.push(score)
                 disable()
             } else {
                 answerTwo.style.color = 'red'
@@ -87,7 +87,8 @@ quizSlides() {
         answerThree.onclick = function() {
             if (questions[questionCounter].answers[2].correct_answer == true) {
                 answerThree.style.color = 'green'
-                score +=1
+                score+=1
+                Grade.grades.push(score)
                 disable()
             } else {
                 answerThree.style.color = 'red'
@@ -98,7 +99,8 @@ quizSlides() {
         answerFour.onclick = function() {
             if (questions[questionCounter].answers[3].correct_answer == true) {
                 answerFour.style.color = 'green'
-                score +=1
+                score+=1
+                Grade.grades.push(score)
                 disable()
             } else {
                 answerFour.style.color = 'red'
@@ -118,3 +120,25 @@ quizSlides() {
     
 }
 }
+
+// fetch("http://localhost:3000/questions")
+//                 .then((resp) => {
+//                     if (!resp.ok) {
+//                         console.log('error')
+//                     }
+//                     else {
+//                         resp.json()
+//                 .then(questions => {
+//                     for (let question of questions.data) {
+//                         let newQuestion = new Question(question)
+//                     }
+//                     this.renderQuestions()
+                
+//                     });
+//                 }
+//             })
+//                 .catch((err) => {
+//                     console.log('There is an error present.');
+//                     console.log(err);
+//                 });
+//             }

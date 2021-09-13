@@ -1,7 +1,5 @@
 class Answer {
 
-    static answers = []
-
     constructor(answer) {
         this.content = answer.content;
         this.correct_answer = answer.correct_answer;
@@ -9,7 +7,7 @@ class Answer {
         Answer.answers.push(this)
         
     }
-    
+    static answers = []
 
     static getAnswers() {
         fetch("http://localhost:3000/answers")
@@ -19,6 +17,10 @@ class Answer {
                         let newAnswer = new Answer(answer)
                     }
                 })
+                // .catch((err) => {
+                //     console.log('There is an error present.');
+                //     console.log(err);
+                // });
     }
 
   static checkAnswer() {
@@ -26,7 +28,8 @@ class Answer {
     answerOne.onclick = function() {
         if (allAns[0].correct_answer == true) {
             answerOne.style.color = 'green'
-            score +=1
+            score+=1
+            Grade.grades.push(score)
             disable()
         } else {
             answerOne.style.color = 'red'
@@ -38,7 +41,8 @@ class Answer {
     answerTwo.onclick = function() {
         if (allAns[1].correct_answer == true) {
             answerTwo.style.color = 'green'
-            score +=1
+            score+=1
+            Grade.grades.push(score)
             disable()
         } else {
             answerTwo.style.color = 'red'
@@ -49,7 +53,8 @@ class Answer {
     answerThree.onclick = function() {
         if (allAns[2].correct_answer == true) {
             answerThree.style.color = 'green'
-            score +=1
+            score+=1
+            Grade.grades.push(score)
             disable()
         } else {
             answerThree.style.color = 'red'
@@ -60,7 +65,8 @@ class Answer {
     answerFour.onclick = function() {
         if (allAns[3].correct_answer == true) {
             answerFour.style.color = 'green'
-            score +=1
+            score+=1
+            Grade.grades.push(score)
             disable()
         } else {
             answerFour.style.color = 'red'
