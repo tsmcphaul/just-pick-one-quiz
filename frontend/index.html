@@ -30,15 +30,109 @@
             <button class="btn" id="next">NEXT</button>
             <button class="btn" id="submit">SUBMIT</button>
             <a class="btn" id="restart" href="/Users/shaemcphaul/Development/code/phase4/just-pick-one-quiz/frontend/index.html">Try Again!</a>
+            <button class='btn' id='new-question'>Add a question</button>
         </div>
         
         <div id="grade"></div>
-    </div>
-   
+
+        <!-- <div id='add-question'>
+            <h3>Do you have more facts about Lebron? Add a question to the quiz</h3>
+            <form id='form' action="http://localhost:3000/questions" method="POST">
+                <label for="question" > Question: </label>
+                <input type="text" name="content" id="content"/>
+                <br>
+
+                <label for="answer" > Answer 1: </label>
+                <input type="text" name="answer1" id="answer1" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct_answer" name="correct_answer" class="filled-in">
+                <span></span>
+                </label>
+                <br>
+
+                <label for="answer" > Answer 2: </label>
+                <input type="text" name="answer2" id="answer2" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct_answer" name="correct_answer" class="filled-in">
+                <span></span>
+            </label>
+                <br>
+        <br>
+            <label for="answer" > Answer 3: </label>
+                <input type="text" name="answer3" id="answer3" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct_answer" name="correct_answer" class="filled-in">
+                <span></span>
+            </label>
+                
+        <br>
+                <label for="answer" > Answer 4: </label>
+                <input type="text" name="answer4" id="answer4" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct_answer" name="correct_answer" class="filled-in">
+                <span></span>
+            </label>
+                <br>
+                <br>
+                <button class='btn' type="submit" id="submit" value="Submit" onclick='Question.addQuestion()'></button>
+                </form>
+        </div> -->
+
+        <div id='add-question'> 
+            <h3>Do you have more facts about Lebron? Add a question to the quiz</h3>
+            <form id='add-question' action="http://localhost:3000/questions" method="POST">
+                <label for="question" > Question: </label>
+                <input type="text" name="content" id="content"/>
+                <button type="submit" id="submit" value="Submit" ></button>
+            </form>
+        </div>
+        <div id="answers-form">
+            <form id='answers-form' action="http://localhost:3000/answers" method="POST">
+                <label for="content" > Answer 1: </label>
+                <input type="text" name="content" id="content" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct-answer" name="correct-answer" class="filled-in">
+                <span></span>
+            </label>
+                <br>
+
+                <label for="content" > Answer 2: </label>
+                <input type="text" name="content" id="content" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct-answer" name="correct-answer" class="filled-in">
+                <span></span>
+            </label>
+                <br>
+        <br>
+            <label for="content" > Answer 3: </label>
+                <input type="text" name="content" id="content" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct-answer" name="correct-answer" class="filled-in">
+                <span></span>
+            </label>
+                
+        <br>
+                <label for="content" > Answer 4: </label>
+                <input type="text" name="content" id="content" />
+                <label>Check if correct answer
+                <input type="checkbox" id="correct-answer" name="correct-answer" class="filled-in">
+                <span></span>
+            </label>
+                <br>
+                <button type="submit" id="a-submit" value="Submit" formaction="http://localhost:3000/answers"></button>
+            </form>
+        </div>
+     
+
+
+     </div>
+
+    
     <script src="src/answer.js"></script>
     <script src="src/grade.js"></script>
     <script src="src/question.js"></script>
     <script src="index.js"></script>
+    <script src="src/add_question.js"></script>
     
 </div>
 </body>

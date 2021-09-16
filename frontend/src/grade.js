@@ -21,6 +21,9 @@ static showScores() {
         submit.style.display = 'none'
         quizGrid.innerHTML = "Your score is" + " " + Grade.grades.length + "!"
         restart.style.display = 'block'
+        addQuestion.style.display = 'none'
+        // addAnswers.style.display = 'none'
+        addQ.style.display = 'block';
     }   
 }
 

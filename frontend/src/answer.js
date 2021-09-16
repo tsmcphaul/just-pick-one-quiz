@@ -76,6 +76,29 @@ class Answer {
     }
 
   }
+
+  static addAnswers() {
+    const answerForm = {
+        content: content.value,
+        correct_answer: correctAnswer.value,
+        question_id: Question.quizQuestions[Question.quizQuestions.length-1].id
+
+    }
+    const configObj = {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(answerForm)
+    }
+    fetch("http://localhost:3000/answers", configObj)
+        .then(res => res.json())
+        .then(data => {
+            let newAddedAnswer = new Answer(answer)
+            Answer.answers.push(newAddedAnswer)
+        })
+}
 }
     //   if (allAns[ansIndex].correct_answer === false) {
     //       console.log('hello');

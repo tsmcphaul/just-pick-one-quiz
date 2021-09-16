@@ -31,6 +31,7 @@ class Question {
 quizSlides() {
 
     let questionCounter = 0;
+    ansIndex = 0
 
     question.innerHTML = questions[questionCounter].content
     answerOne.innerHTML = allAns[0].content
@@ -52,15 +53,19 @@ quizSlides() {
         answerThree.style.color = '';
         answerFour.style.color = '';
         enable();
-
+        
+        
         if (questionCounter < 4) {
         questionCounter++;
+        
         question.innerHTML = questions[questionCounter].content
         answerOne.innerHTML = questions[questionCounter].answers[0].content
         answerTwo.innerHTML = questions[questionCounter].answers[1].content
         answerThree.innerHTML = questions[questionCounter].answers[2].content
         answerFour.innerHTML = questions[questionCounter].answers[3].content
-
+        
+        }
+        
         answerOne.onclick = function() {
             if (questions[questionCounter].answers[0].correct_answer == true) {
                 answerOne.style.color = 'green'
@@ -107,7 +112,7 @@ quizSlides() {
                 answerFour.style.color = 'red'
                 disable()
             }
-        }
+        
         } 
         
         if (questionCounter >= 4) {
@@ -115,11 +120,34 @@ quizSlides() {
            submit.style.display = 'inline'
         }
         
-
+        
 }
 
     
 }
+
+static addQuestion() {
+    const formData = {
+        content: content.value
+        // answers: [{content: addAnswerOne.value, correct_answer: correctAnswer.value, question_id: Question.quizQuestions[Question.quizQuestions.length-1].id}, {content: addAnswerTwo.value, correct_answer: correctAnswer.value, question_id: Question.quizQuestions[Question.quizQuestions.length-1].id},{content: addAnswerThree.value, correct_answer: correctAnswer.value, question_id: Question.quizQuestions[Question.quizQuestions.length-1].id},{content: addAnswerFour.value, correct_answer: correctAnswer.value, question_id: Question.quizQuestions[Question.quizQuestions.length-1].id}]
+    };
+    const configObj = {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+    }
+    fetch("http://localhost:3000/questions", configObj)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            let newAddedQuestion = new Question(question)
+            questions.push(newAddedQuestion)
+        })
+}
+
 }
 
 // fetch("http://localhost:3000/questions")
